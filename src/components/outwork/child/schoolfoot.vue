@@ -866,7 +866,7 @@
           <el-upload
             class="upload-demo"
             ref="upload"
-            action="http://192.168.3.220:83/api/UserphysicalForGarden/SchoolImportExcel"
+            :action="action"
             :on-success="handleSuccess"
             :before-upload="handleUpload"
             :auto-upload="false"
@@ -916,6 +916,7 @@ import {
   ExportOutSchoolUserphysicals //入校导出Excel
 } from "../../../api/datalist";
 import session from "../../../utils/session";
+import pathUrl from "../../../api/pathUrl";
 import { all, Promise } from "q";
 import $axios from "axios";
 import { isString } from "../../../utils/types";
@@ -926,6 +927,7 @@ export default {
   name: "App",
   data() {
     return {
+      action:pathUrl.pathUrl_net+'/api/UserphysicalForGarden/SchoolImportExcel',
       siteId:null,
       siteList:[],
       user:null,
@@ -1239,8 +1241,8 @@ export default {
 
       arg.whereLambda.bak = this.search.illness || null;
 
-      // let baseUrl ="http://192.168.3.220:83/api/UserphysicalForGarden/ExportOutGardenUserphysicals";//上线地址
-      let baseUrl ="http://192.168.3.220:83/api/UserphysicalForSchool/ExportOutSchoolUserphysicals";//测试
+      // let baseUrl ="http://117.34.105.87:88/api/UserphysicalForGarden/ExportOutGardenUserphysicals";//上线地址
+      let baseUrl = pathUrl.pathUrl_net+"/api/UserphysicalForSchool/ExportOutSchoolUserphysicals";//测试
       let exportArg =
         "?userName=" +
         arg.whereLambda.userName +

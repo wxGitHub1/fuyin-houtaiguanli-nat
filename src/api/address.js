@@ -1,15 +1,9 @@
 //address.js   获取地址
 
 import ajax from '../utils/ajax';
-/**
- * 
- * @param {*} param {  }
- * 
- */
-// 上线接口
-const envUrl = 'http://192.168.3.220:83';
-// 调试接口
-// const envUrl = 'http://192.168.3.220:83';
+import pathUrl from './pathUrl';
+let envUrl = pathUrl.pathUrl_net
+
 
 //获取省份
 export const getProvince = async params => ajax.post(envUrl + '/api/Provice/GetProvices', params);

@@ -1,14 +1,8 @@
 // 获取各种列表
 import ajax from '../utils/ajax';
-/**
- * 
- * @param {*} param {  }
- * 
- */
-// 上线接口
-const envUrl = 'http://192.168.3.220:83';
-// 调试接口 二龙接口
-// const envUrl = 'http://192.168.3.220:83';
+import pathUrl from './pathUrl';
+let envUrl = pathUrl.pathUrl_net
+
 
 
 //大客户获取社区管理列表

@@ -153,6 +153,7 @@ import TheoryPhysical from './components/theory/physical';
 import SysHome from './components/supermanage/sys';
 import SysRole from './components/supermanage/role';
 import SysAddRole from './components/supermanage/addrole';
+import physicalScan from './components/supermanage/physical_scan';
 // import HospitalManage from './components/supermanage/hospitalManage';
 import session from './utils/session';
 
@@ -289,6 +290,7 @@ Vue.component('theory-physical', TheoryPhysical);
 Vue.component('sys-home', SysHome);
 Vue.component('sys-role', SysRole);
 Vue.component('sys-add', SysAddRole);
+Vue.component('physical-scan', physicalScan);
 // Vue.component('sys-hospital', HospitalManage);
 
 import axios from 'axios'

@@ -873,7 +873,7 @@
           <el-upload
             class="upload-demo"
             ref="upload"
-            action="http://192.168.3.220:83/api/UserphysicalForGarden/NurseryImportExcel"
+            :action="action"
             :on-success="handleSuccess"
             :before-upload="handleUpload"
             :auto-upload="false"
@@ -916,6 +916,7 @@ import {
   NurseryImportData,
 } from "../../../api/datalist";
 import session from "../../../utils/session";
+import pathUrl from "../../../api/pathUrl";
 import { all, Promise } from "q";
 import $axios from "axios";
 import { isString } from "../../../utils/types";
@@ -926,6 +927,7 @@ export default {
   name: "App",
   data() {
     return {
+      action:pathUrl.pathUrl_net+'/api/UserphysicalForGarden/NurseryImportExcel',
       siteId:null,
       siteList:[],
       user:null,
@@ -1234,9 +1236,8 @@ export default {
 
       arg.whereLambda.bak = this.search.illness || null;
 
-      // let baseUrl ="http://192.168.3.220:83/api/Userphysical/ExportOutUserphysicals2";//上线
-      let baseUrl =
-        "http://192.168.3.220:83/api/Userphysical/ExportOutUserphysicals2"; //测试
+      // let baseUrl ="http://117.34.105.87:88/api/Userphysical/ExportOutUserphysicals2";//上线
+      let baseUrl =pathUrl.pathUrl_net+"/api/Userphysical/ExportOutUserphysicals2"; //测试
 
       let exportArg =
         "?userName=" +

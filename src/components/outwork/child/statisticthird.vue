@@ -172,6 +172,7 @@ import { getProvince, getCity, getCountys, addCommunity, getCommunity, getOutCom
 import { outputNurseryData, addNurseryData, inputStatus, outExcelData, examStatistic, examStatisticUser } from '../../../api/datalist';
 // import{exportMethod} from '../../../utils/public'
 import session from '../../../utils/session';
+import pathUrl from '../../../api/pathUrl';
 import { all, Promise } from 'q';
 import $axios from 'axios';
 import { dateFormat } from '../../../utils/timeformat';
@@ -426,9 +427,9 @@ export default {
       arg.whereLambda.bak = this.search.illness || null;
 
 
-      let envUrl = 'http://192.168.3.220:83/api/Userphysical/ExportGetRepeatByUser';//测试
+      let envUrl =pathUrl.pathUrl_net+'/api/Userphysical/ExportGetRepeatByUser';//测试
 
-      // let envUrl = 'http://192.168.3.220:83/api/Userphysical/ExportGetRepeatByUser';//上线
+      // let envUrl = 'http://117.34.105.87:88/api/Userphysical/ExportGetRepeatByUser';//上线
 
       let exportArg = '?proviceId=' + arg.whereLambda.proviceId + '&cityId=' + arg.whereLambda.cityId + '&countyId=' + arg.whereLambda.countyId + '&communityId=' + arg.whereLambda.communityId + '&sysUserName=' + arg.whereLambda.sysUserName + '&physicalType=' + arg.whereLambda.physicalType + '&physicalBeginTime=' + arg.whereLambda.physicalBeginTime + '&physicalEndTime=' + arg.whereLambda.physicalEndTime + '&quarter=' + arg.whereLambda.quarter+ '&hospitalId=' + arg.whereLambda.hospitalId+ '&userId=' + arg.whereLambda.userId;
 

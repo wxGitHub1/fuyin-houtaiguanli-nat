@@ -181,7 +181,7 @@
               <span>合同附件:</span>
             </el-col>
             <el-col :span="2">
-              <!-- action="http://192.168.3.220:83/api/Userphysical/Import" -->
+              <!-- action="http://117.34.105.87:88/api/Userphysical/Import" -->
               <!-- <el-upload
                 class="upload-demo"
                 ref="upload"
@@ -488,7 +488,7 @@
               <span>合同附件:</span>
             </el-col>
             <el-col :span="2">
-              <!-- action="http://192.168.3.220:83/api/Userphysical/Import" -->
+              <!-- action="http://117.34.105.87:88/api/Userphysical/Import" -->
               <el-upload
                 class="upload-demo"
                 ref="upload"
@@ -626,6 +626,7 @@ import {
   organisationSeach,
   OrganizationOperate
 } from "../../api/datalist";
+import pathUrl from '../../api/pathUrl';
 import formatTime, { timeFormat } from "../../utils/timeformat";
 import { isString } from "../../utils/types";
 import { Promise } from "q";
@@ -791,7 +792,7 @@ export default {
       whereLambda.organizationName = this.search.organizationName || null; //机构名称
 
       // let baseUrl = "http://192.168.3.167:8090/api/Organization/GetExcel";
-      let envUrl = 'http://192.168.3.220:83/api/Userphysical/ExportRepeat';
+      let envUrl = pathUrl.pathUrl_net+'/api/Userphysical/ExportRepeat';
 
       let exportArg =
         "?linkPeople=" +
@@ -817,7 +818,7 @@ export default {
     download(item) {
       console.log(item.organizationId);
       // let baseUrl = "http://192.168.3.167:8090/api/Organization/Export";
-      let envUrl = 'http://192.168.3.220:83/api/Userphysical/ExportRepeat';
+      let envUrl = pathUrl.pathUrl_net+'/api/Userphysical/ExportRepeat';
 
       let exportArg = "?organizationId=" + item.organizationId;
 
@@ -1072,7 +1073,7 @@ export default {
       // console.log(param);
       var fileObj = param.file;
       // // 接收上传文件的后台地址
-      // var FileController = "http://192.168.3.220:83/api/Userphysical/Import";
+      // var FileController = "http://117.34.105.87:88/api/Userphysical/Import";
       // // FormData 对象
       var form = new FormData();
       // // 文件对象

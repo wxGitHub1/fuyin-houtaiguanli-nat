@@ -346,14 +346,14 @@
           </el-select>
         </el-col>
       </el-row>
-      <!-- action="http://192.168.3.220:83/api/Userphysical/Import" -->
-      <!-- action="http://192.168.3.220:83/api/Userphysical/Import" -->
+      <!-- action="http://117.34.105.87:88/api/Userphysical/Import" -->
+      <!-- action="http://117.34.105.87:88/api/Userphysical/Import" -->
       <el-row style="margin-top: 50px;">
         <el-col :span="5" style="margin-left: 3.6%;">
           <el-upload
             class="upload-demo"
             ref="upload"
-            action="http://192.168.3.220:83/api/Userphysical/Import"
+            :action="action"
             :on-remove="handleRemove"
             :on-success="handleSuccess"
             :on-change="upChange"
@@ -606,6 +606,7 @@ import {
   outworkNurseDataDelete
 } from "../../../api/datalist";
 import session from "../../../utils/session";
+import pathUrl from "../../../api/pathUrl";
 import { all, Promise } from "q";
 import { timeFormat, dateFormat } from "../../../utils/timeformat";
 
@@ -613,6 +614,7 @@ export default {
   name: "App",
   data() {
     return {
+      action:pathUrl.pathUrl_net+'/api/Userphysical/Import',
       siteId:null,
       siteList:[],
       user:null,
@@ -812,9 +814,8 @@ export default {
 
       arg.whereLambda.bak = this.search.illness || null;
 
-      let baseUrl =
-        "http://192.168.3.220:83/api/Userphysical/ExportOutUserphysicals"; //测试
-      // let baseUrl = 'http://192.168.3.220:83/api/Userphysical/ExportOutUserphysicals';//上线
+      let baseUrl =pathUrl.pathUrl_net+"/api/Userphysical/ExportOutUserphysicals"; //测试
+      // let baseUrl = 'http://117.34.105.87:88/api/Userphysical/ExportOutUserphysicals';//上线
 
       let exportArg =
         "?userName=" +

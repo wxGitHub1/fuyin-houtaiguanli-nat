@@ -913,7 +913,7 @@
           <el-upload
             class="upload-demo"
             ref="upload"
-            action="http://192.168.3.220:83/api/UserphysicalForGarden/ImportExcel"
+            :action="action"
             :on-remove="handleRemove"
             :on-success="handleSuccess"
             :on-error="handleError"
@@ -1018,6 +1018,7 @@ import {
   GetTeachers
 } from "../../api/datalist";
 import session from "../../utils/session";
+import pathUrl from '../../api/pathUrl';
 import { all, Promise } from "q";
 import $axios from "axios";
 import { isString } from "../../utils/types";
@@ -1028,6 +1029,7 @@ export default {
   name: "App",
   data() {
     return {
+      action:pathUrl.pathUrl_net+'/api/UserphysicalForGarden/ImportExcel',
       siteId:null,
       siteList:[],
       user:null,
@@ -1282,9 +1284,8 @@ export default {
         arg.whereLambda.quarter = 0;
       }
 
-      // let baseUrl ="http://192.168.3.220:83/api/UserphysicalForGarden/ExportOutGardenUserphysicals";// 上线地址
-      let baseUrl =
-        "http://192.168.3.220:83/api/UserphysicalForGarden/ExportOutGardenUserphysicals?"; // 测试地址
+      // let baseUrl ="http://117.34.105.87:88/api/UserphysicalForGarden/ExportOutGardenUserphysicals";// 上线地址
+      let baseUrl = pathUrl.pathUrl_net+"/api/UserphysicalForGarden/ExportOutGardenUserphysicals?"; // 测试地址
       let exportArg =
         "proviceId=" +
         arg.whereLambda.proviceId +

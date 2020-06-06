@@ -42,6 +42,10 @@ export default {
         {
           name: "role",
           title: "角色管理"
+        },
+        {
+          name: "physicalScan",
+          title: "查体扫描统计"
         }
       ],
       Repeat: false
@@ -83,6 +87,15 @@ export default {
               title: "角色管理",
               name: "role",
               content: "sys-role",
+              isClose: true
+            });
+            this.tableNav = newTabName;
+            break;
+          case "physicalScan":
+            _this.tables.push({
+              title: "查体扫描统计",
+              name: "physicalScan",
+              content: "physical-scan",
               isClose: true
             });
             this.tableNav = newTabName;

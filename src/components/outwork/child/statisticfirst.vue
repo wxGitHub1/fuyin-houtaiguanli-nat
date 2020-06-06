@@ -270,6 +270,7 @@ import {
   examStatistic
 } from "../../../api/datalist";
 import session from "../../../utils/session";
+import pathUrl from "../../../api/pathUrl";
 import { all, Promise } from "q";
 import $axios from "axios";
 import { dateFormat } from "../../../utils/timeformat";
@@ -544,8 +545,8 @@ export default {
 
       arg.whereLambda.bak = this.search.illness || null;
 
-      let envUrl = 'http://192.168.3.220:83/api/Userphysical/ExportRepeat';//测试
-      // let envUrl = "http://192.168.3.220:83/api/Userphysical/ExportRepeat";//上线
+      let envUrl =pathUrl.pathUrl_net+'/api/Userphysical/ExportRepeat';//测试
+      // let envUrl = "http://117.34.105.87:88/api/Userphysical/ExportRepeat";//上线
 
       let exportArg =
         "?proviceId=" +
