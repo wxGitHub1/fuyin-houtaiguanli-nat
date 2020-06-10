@@ -4,9 +4,9 @@
   <div>
     <el-form :inline="true" size="small" id="search" class="padding-LR-p10">
       <el-form-item label="导向">
-        <el-select class="w-150" clearable v-model="seach.productOrderType" placeholder="请选择">
+        <el-select class="w-150" clearable v-model="seach.guide" placeholder="请选择">
           <el-option
-            v-for="item in seach.productOrderTypeList"
+            v-for="item in seach.guideList"
             :key="item.id"
             :label="item.name"
             :value="item.id"
@@ -93,7 +93,15 @@ export default {
         pageSize: 10,
         currentPage: 1
       },
-      seach: { },
+      seach: {
+          guide:null,
+          guideList:[
+            {id:1,name:"A"},
+            {id:2,name:"B"},
+            {id:3,name:"C"},
+            {id:4,name:"D"},
+            ],
+      },
       loading: true
     };
   },
