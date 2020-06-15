@@ -125,3 +125,7 @@ export const GetSysusers = async params => ajax.post(envUrl + '/api/Sysusers/Get
 export const GetHospitals = async params => ajax.post(envUrl + '/api/Hospital/GetHospitals', params);
 //超级 系统用户管理 获取用户角色下拉框
 export const GetRoleList = async params => ajax.post(envUrl + '/api/Roles/GetRoleList', params);
+//体检扫描统计
+export const GetScanList = async params => ajax.post(envUrl + '/api/Community/GetScanList', params);//查询
+export const ExportData = async params => ajax.get(envUrl + '/api/Community/ExportData', params);//导出
+export const InsertScan2 = async params => ajax.post(envUrl + '/api/Community/InsertScan2', params);//匹配
