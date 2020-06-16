@@ -107,7 +107,7 @@
 </template>
 
 <script>
-import { GetScanList, InsertScan2,ExportData} from "../../api/datalist";
+import { GetScanList, InsertScan2, ExportData } from "../../api/datalist";
 import pathUrl from "../../api/pathUrl";
 // import javaApi from "../../api/javaApi";
 // import { exportMethod } from "../../utils/public";
@@ -137,8 +137,8 @@ export default {
           { id: 3, name: "专业骨科医院" },
           { id: 4, name: "西安市红会医院" }
         ],
-        phone:null,
-        beginsaomiaoshijian:null
+        phone: null,
+        beginsaomiaoshijian: null
       },
       modifyDataList: [
         { name: "15楼测评中心", id: 1 },
@@ -188,7 +188,7 @@ export default {
     },
     cancel() {
       this.matchVisitDialog = false;
-      this.scanid=null;
+      this.scanid = null;
     },
     //订单列表 //查询
     async pageList(pageIndex = 1, pageSize = 10) {
@@ -196,11 +196,17 @@ export default {
         pageIndex: pageIndex,
         pageSize: pageSize,
         whereLambda: {
-          phone:this.seach.phone||null,
-          direct:this.seach.guide||null,
-          isvisit:this.seach.isVisit||null,
-          beginsaomiaoshijian:this.seach.beginsaomiaoshijian == null ? null : this.seach.beginsaomiaoshijian[0],
-          endsaomiaoshijian:this.seach.beginsaomiaoshijian == null ? null : this.seach.beginsaomiaoshijian[1],
+          phone: this.seach.phone || null,
+          direct: this.seach.guide || null,
+          isvisit: this.seach.isVisit || null,
+          beginsaomiaoshijian:
+            this.seach.beginsaomiaoshijian == null
+              ? null
+              : this.seach.beginsaomiaoshijian[0],
+          endsaomiaoshijian:
+            this.seach.beginsaomiaoshijian == null
+              ? null
+              : this.seach.beginsaomiaoshijian[1]
         }
       };
       this.loading = true;
@@ -230,13 +236,19 @@ export default {
     //导出excel
     exportExcels() {
       let data = {
-          phone:this.seach.phone||null,
-          direct:this.seach.guide||null,
-          isvisit:this.seach.isVisit||null,
-          beginsaomiaoshijian:this.seach.beginsaomiaoshijian == null ? null : this.seach.beginsaomiaoshijian[0],
-          endsaomiaoshijian:this.seach.beginsaomiaoshijian == null ? null : this.seach.beginsaomiaoshijian[1],
+        phone: this.seach.phone || null,
+        direct: this.seach.guide || null,
+        isvisit: this.seach.isVisit || null,
+        beginsaomiaoshijian:
+          this.seach.beginsaomiaoshijian == null
+            ? null
+            : this.seach.beginsaomiaoshijian[0],
+        endsaomiaoshijian:
+          this.seach.beginsaomiaoshijian == null
+            ? null
+            : this.seach.beginsaomiaoshijian[1]
       };
-      let envUrl =pathUrl.pathUrl_net+'/api/Community/ExportData';
+      let envUrl = pathUrl.pathUrl_net + "/api/Community/ExportData";
 
       let exportArg =
         "?phone=" +
