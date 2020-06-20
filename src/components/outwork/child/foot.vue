@@ -156,9 +156,21 @@
               <el-col :span="2" style="line-height: 30px;">
                 <span class="after-red">性别:</span>
               </el-col>
-              <el-col :span="4" style="line-height: 30px;text-align:left;">
+              <el-col :span="3" style="line-height: 30px;text-align:left;">
                 <el-radio v-model="inputData.sex" label="1">男</el-radio>
                 <el-radio v-model="inputData.sex" label="2">女</el-radio>
+              </el-col>
+              <el-col :span="2" style="width: 6%;line-height: 30px;">
+                <span>身高:</span>
+              </el-col>
+              <el-col :span="3">
+                <el-input placeholder="请输入身高" v-model="inputData.height" size="small"></el-input>
+              </el-col>
+              <el-col :span="2" style="width: 6%;line-height: 30px;">
+                <span>体重:</span>
+              </el-col>
+              <el-col :span="3">
+                <el-input placeholder="请输入体重" v-model="inputData.weight" size="small"></el-input>
               </el-col>
             </el-row>
             <el-row
@@ -403,9 +415,21 @@
               <el-col :span="2" style="line-height: 30px;">
                 <span class="after-red">性别:</span>
               </el-col>
-              <el-col :span="4" style="line-height: 30px;text-align:left;">
+              <el-col :span="3" style="line-height: 30px;text-align:left;">
                 <el-radio v-model="modifyData.sex" label="男">男</el-radio>
                 <el-radio v-model="modifyData.sex" label="女">女</el-radio>
+              </el-col>
+              <el-col :span="2" style="width: 6%;line-height: 30px;">
+                <span>身高:</span>
+              </el-col>
+              <el-col :span="3">
+                <el-input placeholder="请输入身高" v-model="modifyData.height" size="small"></el-input>
+              </el-col>
+              <el-col :span="2" style="width: 6%;line-height: 30px;">
+                <span>体重:</span>
+              </el-col>
+              <el-col :span="3">
+                <el-input placeholder="请输入体重" v-model="modifyData.weight" size="small"></el-input>
               </el-col>
             </el-row>
             <el-row
@@ -1038,7 +1062,10 @@ export default {
         schoolName: null,
         sumNumber: null,
         quarter: null,
-        illnessList: []
+        illnessList: [],
+        height:null,
+        weight:null,
+
       },
       //数据详情与修改
       modifyData: {
@@ -1055,6 +1082,8 @@ export default {
         examTime: null,
         clientName: null,
         sex: "男",
+        height:null,
+        weight:null,
         birthday: null,
         quarter: null,
         phone: null,
@@ -1599,6 +1628,8 @@ export default {
         this.modifyData.examTime = item.physicalTime;
         this.modifyData.clientName = item.userName;
         this.modifyData.sex = item.sex;
+        this.modifyData.height = item.height;
+        this.modifyData.weight = item.weight;
         this.modifyData.quarter = item.quarter;
         this.modifyData.phone = item.patriarchicPhone;
         this.modifyData.schoolName = item.schoolId;
@@ -1798,7 +1829,9 @@ export default {
           schoolId: allData.schoolName,
           physicalIdTotalCount: allData.sumNumber,
           quarter: allData.quarter.zoom,
-          bak: allData.illnessList.join(",")
+          bak: allData.illnessList.join(","),
+          height:allData.height,
+          weight:allData.weight,
         };
       } else if (type === "info") {
         allData = this.modifyData;
@@ -1846,6 +1879,8 @@ export default {
             sysUserName: allData.examPeople,
             userName: allData.clientName,
             sex: allData.sex,
+            height:allData.height,
+            weight:allData.weight,
             birthday: allData.birthday,
             patriarchicPhone: allData.phone,
             schoolId: allData.schoolName,
@@ -1863,6 +1898,8 @@ export default {
             sysUserName: allData.examPeople,
             userName: allData.clientName,
             sex: allData.sex,
+            height:allData.height,
+            weight:allData.weight,
             birthday: allData.birthday,
             patriarchicPhone: allData.phone,
             schoolId: allData.schoolName,

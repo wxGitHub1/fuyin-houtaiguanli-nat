@@ -499,10 +499,10 @@
         </el-col>
         <el-col :span="14" :offset="1" style="text-align: left">
           <el-checkbox-group v-model="modifySelection.feedBackContent">
-            <el-checkbox label="十大病情"></el-checkbox>
-            <el-checkbox label="足弓发育"></el-checkbox>
-            <el-checkbox label="力线发育"></el-checkbox>
-            <el-checkbox label="HTML5"></el-checkbox>
+            <el-checkbox label="二维码"></el-checkbox>
+            <el-checkbox label="反馈单"></el-checkbox>
+            <!-- <el-checkbox label="力线发育"></el-checkbox>
+            <el-checkbox label="HTML5"></el-checkbox> -->
           </el-checkbox-group>
         </el-col>
       </el-row>
@@ -829,10 +829,10 @@
         </el-col>
         <el-col :span="14" :offset="1" style="text-align: left">
           <el-checkbox-group v-model="addNewList.feedBackContent">
-            <el-checkbox label="十大病情"></el-checkbox>
-            <el-checkbox label="足弓发育"></el-checkbox>
-            <el-checkbox label="力线发育"></el-checkbox>
-            <el-checkbox label="HTML5"></el-checkbox>
+            <el-checkbox label="二维码"></el-checkbox>
+            <el-checkbox label="反馈单"></el-checkbox>
+            <!-- <el-checkbox label="力线发育"></el-checkbox>
+            <el-checkbox label="HTML5"></el-checkbox> -->
           </el-checkbox-group>
         </el-col>
       </el-row>
